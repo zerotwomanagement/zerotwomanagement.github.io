@@ -1,0 +1,75 @@
+type: object
+properties:
+  pick_up_location:
+    type: string
+    required: true
+    description: An address of the pick up location.
+  pick_up_lat:
+    type: number
+    required: false
+    description: A latitude of the pick up location.
+  pick_up_lng:
+    type: number
+    required: false
+    description: A longitude of the pick up location.
+  drop_off_location:
+    type: string
+    required: true
+    description: An address of the drop off location.
+  drop_off_lat:
+    type: number
+    required: false
+    description: A latitude of the drop off location.
+  drop_off_lng:
+    type: number
+    required: false
+    description: A longitude of the drop off location.
+  passengers:
+    type: integer
+    required: true
+    minimum: 1
+    maximum: 100
+    description: The number of passengers.
+  journey:
+    type: string
+    enum: [ ONE_WAY, RETURN ]
+    required: true
+    description: The type of journey.
+  departure_at:
+    type: string
+    required: true
+    description: The date of departure in `Y-m-d H:i` format.
+  return_at:
+    type: string
+    required: false
+    description: The date of return in `Y-m-d H:i` format and is required only when type of journey is `RETURN`.
+  priority:
+    type: string
+    enum: [ NORMAL, URGENT ]
+    required: true
+    description: The priority of the trip.
+  estimated_price:
+    type: number
+    required: false
+    minimum: 1
+    description: The estimated price of the trip.
+  first_name:
+    type: string
+    required: true
+    description: The first name of the customer.
+  last_name:
+    type: string
+    required: true
+    description: The last name of the customer.
+  email:
+    type: string
+    required: true
+    description: The email address of the customer.
+  phone_number:
+    type: string
+    required: true
+    description: The phone number of the customer which has to be in an international format except a UK phone number which is allowed in local format too.
+  additional_information:
+    type: string
+    required: false
+    description: The additional information provided by the customer.

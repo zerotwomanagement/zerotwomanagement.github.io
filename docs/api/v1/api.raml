@@ -1,0 +1,27 @@
+#%RAML 1.0
+---
+title: Zero Two Management API
+version: v1
+protocols: [ HTTPS ]
+baseUri: https://api.zerotwomanagement.com/v1
+mediaType: application/json
+securedBy: [passThrough]
+
+securitySchemes:
+  passThrough: !include securitySchemes/passThrough.raml
+
+traits:
+  requiredHeaders: !include traits/requiredHeaders.raml
+
+/leads:
+  post:
+    description: Create a lead
+    is: [ requiredHeaders ]
+    body:
+      type: !include types/request/leads/createLead.raml
+      example: !include examples/request/leads/create-lead.json
+    responses:
+      201:
+        body:
+          type: !include types/response/leads/lead.raml
+          example: !include examples/response/leads/lead.json

@@ -1,0 +1,19 @@
+{
+  "pick_up_location": "10 Brighton Avenue, Manchester, UK",
+  "pick_up_lat": 53.411080,
+  "pick_up_lng": -2.996498,
+  "drop_off_location": "9 Carnforth Road, Stockport, UK",
+  "drop_off_lat": 53.481601,
+  "drop_off_lng": -2.635332,
+  "passengers": 4,
+  "journey": "RETURN",
+  "departure_at": "2018-10-30 10:30",
+  "return_at": "2018-10-30 20:30",
+  "priority": "NORMAL",
+  "estimated_price": 9.75,
+  "first_name": "John",
+  "last_name": "Smith",
+  "email": "john.smith@hotmail.com",
+  "phone_number": "07712345678",
+  "additional_information": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
+}
