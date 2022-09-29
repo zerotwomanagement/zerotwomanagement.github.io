@@ -2,3 +2,5 @@
 .vscode
 **/.DS_Store
 
+docs/api/v1/index.html
+

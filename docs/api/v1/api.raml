@@ -13,20 +13,23 @@ securitySchemes:
 traits:
   requiredHeaders: !include traits/requiredHeaders.raml
 
+types:
+  Leads_Lead: !include types/response/leads/lead.raml
+  Leads_CreateLead: !include types/request/leads/createLead.raml
+  Leads_UpdateLead: !include types/request/leads/updateLead.raml
+
 /leads:
   post:
     description: Create a lead
     is: [ requiredHeaders ]
     body:
-      application/json:
-        type: !include types/request/leads/createLead.raml
-        example: !include examples/request/leads/create-lead.json
+      type: Leads_CreateLead
+      example: !include examples/request/leads/create-lead.json
     responses:
       201:
         body:
-          application/json:
-            type: !include types/response/leads/lead.raml
-            example: !include examples/response/leads/lead.json
+          type: Leads_Lead
+          example: !include examples/response/leads/lead.json
   /{id}:
     uriParameters:
       id:
@@ -37,12 +40,10 @@ traits:
       description: Update a lead
       is: [ requiredHeaders ]
       body:
-        application/json:
-          type: !include types/request/leads/updateLead.raml
-          example: !include examples/request/leads/update-lead.json
+        type: Leads_UpdateLead
+        example: !include examples/request/leads/update-lead.json
       responses:
         200:
           body:
-            application/json:
-              type: !include types/response/leads/lead.raml
-              example: !include examples/response/leads/lead.json
+            type: Leads_Lead
+            example: !include examples/response/leads/lead.json

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+build_apidocs() {
+  docker run --rm -v $PWD/docs/api/v1:/raml mattjtodd/raml2html -i /raml/api.raml -o /raml/index.html
+}
+
+case $1 in
+  "apidocs")
+    build_apidocs
+    ;;
+
+  *)
+    error "You must provide one of the following arguments [apidocs]"
+    exit 1
+    ;;
+esac
