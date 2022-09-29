@@ -1,10 +1,19 @@
 type: object
 properties:
-  id:
-    type: integer
-    required: true
-    description: A unique identifier of the lead.
-  reference_number:
+  status:
     type: string
     required: true
-    description: A unique reference number of the lead.
+    description: The response status.
+  result:
+    type: object
+    required: true
+    description: The response payload.
+    properties:
+      id:
+        type: integer
+        required: true
+        description: A unique identifier of the lead.
+      reference_number:
+        type: string
+        required: true
+        description: A unique reference number of the lead.
