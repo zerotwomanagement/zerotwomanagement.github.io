@@ -28,7 +28,7 @@ jobs:
         uses: actions/checkout@v3
       - name: Build api docs
         run: |
-          docker run --rm -v $(PWD)/docs/api/v1:/raml mattjtodd/raml2html -v -i /raml/api.raml -o /raml/index.html
+          docker run --rm -v "`pwd`/docs/api/v1:/raml" mattjtodd/raml2html -v -i /raml/api.raml -o /raml/index.html
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Build with Jekyll
